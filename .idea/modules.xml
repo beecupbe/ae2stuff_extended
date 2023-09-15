@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/ae2stuff.iml" filepath="$PROJECT_DIR$/ae2stuff.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/net.bdew.ae2stuff.iml" filepath="$PROJECT_DIR$/.idea/modules/net.bdew.ae2stuff.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/net.bdew.ae2stuff.api.iml" filepath="$PROJECT_DIR$/.idea/modules/net.bdew.ae2stuff.api.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/net.bdew.ae2stuff.main.iml" filepath="$PROJECT_DIR$/.idea/modules/net.bdew.ae2stuff.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/net.bdew.ae2stuff.test.iml" filepath="$PROJECT_DIR$/.idea/modules/net.bdew.ae2stuff.test.iml" />
+    </modules>
+  </component>
+</project>

@@ -1,0 +1,174 @@
+buildscript {
+    repositories {
+        mavenCentral()
+        mavenLocal()
+        maven {
+            name = "forge"
+            url = "https://maven.minecraftforge.net"
+        }
+        maven {
+            name = "sonatype"
+            url = "https://oss.sonatype.org/content/repositories/snapshots/"
+        }
+        maven {
+            name = "gradle plugins"
+            url = "https://plugins.gradle.org/m2/"
+        }
+    }
+    dependencies {
+        classpath 'net.minecraftforge.gradle:ForgeGradle:2.3-SNAPSHOT'
+        classpath "gradle.plugin.com.matthewprenger:CurseGradle:1.0.9"
+    }
+}
+
+apply plugin: 'scala'
+apply plugin: 'idea'
+apply plugin: 'net.minecraftforge.gradle.forge'
+apply plugin: 'com.matthewprenger.cursegradle'
+
+file "build.properties" withReader {
+    def prop = new Properties()
+    prop.load(it)
+    ext.config = new ConfigSlurper().parse prop
+}
+
+if (project.hasProperty('forgeOverride')) {
+    config.forge.version = forgeOverride
+}
+
+if (project.hasProperty('buildnum')) {
+    ext.simpleVersion = "${config.ae2stuff.version}.${project.buildnum}"
+} else {
+    ext.simpleVersion = "${config.ae2stuff.version}-DEV"
+}
+
+version = 'v' + config.ae2stuff.version + '-' + config.extended.version
+
+group = "net.bdew"
+archivesBaseName = "ae2stuff-extended"
+
+minecraft {
+    version = "${config.minecraft.version}-${config.forge.version}"
+    mappings = "${config.minecraft.mappings}"
+    useDepAts = true
+    makeObfSourceJar = false
+    replace("BDLIB_VER", config.bdlib.version)
+    replace("AE2STUFF_VER", simpleVersion.toString())
+}
+
+repositories {
+    mavenCentral()
+    maven {
+        name = "bdew"
+        url = "https://jenkins.bdew.net/maven"
+    }
+    maven {
+        name "JEI"
+        url "http://dvs1.progwml6.com/files/maven"
+    }
+    maven {
+        url "https://www.cursemaven.com"
+    }
+
+}
+
+dependencies {
+    compile "net.bdew:bdlib:${config.bdlib.version}-mc${config.minecraft.version}:dev"
+    compile "curse.maven:Hwyla-253449:2568751"
+    compile fileTree ('libs')
+
+    //deobfCompile "mezz.jei:jei_${config.minecraft.version}:${config.jei.version}"
+    //deobfCompile "mcp.mobius.waila:Hwyla:${config.hwyla.version}"
+    
+
+}
+
+import org.apache.tools.ant.filters.ReplaceTokens
+
+sourceSets {
+    main {
+        scala {
+            srcDir 'src'
+        }
+        resources {
+            srcDir 'resources'
+        }
+    }
+}
+
+
+task sourceJarReal(type: Jar) {
+    classifier "sources"
+}
+
+task deobfJar(type: Jar) {
+    from sourceSets.main.output
+    exclude "**/*.psd"
+    classifier "dev"
+    duplicatesStrategy "exclude"
+}
+
+
+jar {
+    exclude "**/*.psd"
+}
+
+afterEvaluate { project ->
+    // Fudge the inputs of api/source jars so we get the version after replacements
+    tasks.getByPath(":sourceJarReal").from(tasks.getByPath(":sourceMainScala").outputs.files)
+}
+
+artifacts {
+    archives sourceJarReal
+    archives deobfJar
+}
+
+apply plugin: 'maven-publish'
+
+publishing {
+    publications {
+        maven(MavenPublication) {
+            artifact deobfJar
+            artifact sourceJarReal
+        }
+    }
+    repositories {
+        maven {
+            url "file://var/www/maven"
+        }
+    }
+}
+
+curseforge {
+    apiKey = project.hasProperty("curseForgeApiKey") ? project.curseForgeApiKey : ""
+    project {
+        id = config.curseforge.id
+
+        releaseType = "alpha"
+        changelog = project.hasProperty("changelog") ? project.changelog : "No changelog available"
+
+        addGameVersion config.minecraft.version
+        addGameVersion "1.12"
+        addGameVersion "1.12.2"
+
+
+        mainArtifact(jar) {
+            displayName = "AE2Stuff ${simpleVersion} (MC ${config.minecraft.version})"
+        }
+
+        addArtifact(deobfJar) {
+            displayName = "AE2Stuff ${simpleVersion} Deobfuscated (MC ${config.minecraft.version})"
+        }
+
+        addArtifact(sourceJarReal) {
+            displayName = "AE2Stuff ${simpleVersion} Source (MC ${config.minecraft.version})"
+        }
+
+        relations {
+            requiredLibrary 'bdlib'
+            requiredLibrary 'applied-energistics-2'
+            optionalLibrary 'waila'
+            optionalLibrary 'just-enough-items-jei'
+        }
+    }
+}
