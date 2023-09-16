@@ -15,9 +15,9 @@ RU:
 
 ![gif2-1](https://github.com/beecupbe/ae2stuff_extended/assets/115642276/004b697d-dcc4-41a7-8839-14c25fa23fb4)
 
-Для работы требуется BDLib (https://www.curseforge.com/minecraft/mc-mods/bdlib)
+# Для работы требуется BDLib (https://www.curseforge.com/minecraft/mc-mods/bdlib)
 
-и AE2 UEL: Extended (https://github.com/beecupbe/ae2uel_extended)
+# и AE2 UEL: Extended (https://github.com/beecupbe/ae2uel_extended)
 
 EN:
 
@@ -37,6 +37,6 @@ This is a fork of AE2 Stuff which adds some improvements:
 
 ![gif2-1](https://github.com/beecupbe/ae2stuff_extended/assets/115642276/004b697d-dcc4-41a7-8839-14c25fa23fb4)
 
-For the mod to work you need to install BDLib (https://www.curseforge.com/minecraft/mc-mods/bdlib)
+#For the mod to work you need to install BDLib (https://www.curseforge.com/minecraft/mc-mods/bdlib)
 
-and AE2 UEL: Extended (https://github.com/beecupbe/ae2uel_extended)
+# and AE2 UEL: Extended (https://github.com/beecupbe/ae2uel_extended)
