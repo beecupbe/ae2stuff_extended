@@ -40,7 +40,7 @@ import net.minecraft.world.World
 object BlockInscriber extends BaseBlock("inscriber", MachineMaterial) with HasTE[TileInscriber] with BlockKeepData with BlockWrenchable with BlockActiveTexture {
   override val TEClass = classOf[TileInscriber]
 
-  setHardness(1)
+  setHardness(2)
 
   override def onBlockActivatedReal(world: World, pos: BlockPos, state: IBlockState, player: EntityPlayer, hand: EnumHand, heldItem: ItemStack, side: EnumFacing, hitX: Float, hitY: Float, hitZ: Float): Boolean = {
     player.openGui(AE2Stuff, MachineInscriber.guiId, world, pos.getX, pos.getY, pos.getZ)

@@ -58,15 +58,20 @@ class TileGrower extends TileDataSlots with GridTile with SidedInventory with Pe
   val fluixCrystal = AE2Defs.materials.fluixCrystal
 
   serverTick.listen(() => {
-    if (world.getTotalWorldTime % MachineGrower.cycleTicks == 0 && isAwake) {
+    if (isAwake) {
       var hadWork = false
       val needPower = MachineGrower.cyclePower * (1 + (upgrades.cards(Upgrades.SPEED)));
       if (powerStored >= needPower) {
         val invZipped = inv.zipWithIndex.filterNot(_._1.isEmpty)
         for ((stack, slot) <- invZipped if stack.getItem.isInstanceOf[IGrowableCrystal]) {
           var ns = stack
+        if (upgrades.cards(Upgrades.SPEED) == 3) {
+          for (i <- 0 to 600 if stack.getItem.isInstanceOf[IGrowableCrystal])
+            ns = stack.getItem.asInstanceOf[IGrowableCrystal].triggerGrowth(stack)
+        } else {
           for (i <- 0 to upgrades.cards(Upgrades.SPEED) * 3 if stack.getItem.isInstanceOf[IGrowableCrystal])
             ns = stack.getItem.asInstanceOf[IGrowableCrystal].triggerGrowth(stack)
+        }
           setInventorySlotContents(slot, ns)
           hadWork = true
         }
