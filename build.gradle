@@ -76,6 +76,7 @@ dependencies {
     compile "net.bdew:bdlib:${config.bdlib.version}-mc${config.minecraft.version}:dev"
     compile "curse.maven:Hwyla-253449:2568751"
     compile "curse.maven:ae2-uel-extended-913322:4798334"
+    compile fileTree ('libs')
 
     //deobfCompile "mezz.jei:jei_${config.minecraft.version}:${config.jei.version}"
     //deobfCompile "mcp.mobius.waila:Hwyla:${config.hwyla.version}"
