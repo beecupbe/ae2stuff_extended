@@ -5,12 +5,9 @@
     <option name="uncheckedWarnings" value="true" />
     <option name="featureWarnings" value="true" />
     <option name="explainTypeErrors" value="true" />
-    <profile name="Gradle 1" modules="ae2stuff">
+    <profile name="Gradle 1" modules="ae2stuff,ae2stuff-mc1.12.main,ae2stuff-mc1.12.test">
       <option name="deprecationWarnings" value="true" />
       <option name="uncheckedWarnings" value="true" />
-      <parameters>
-        <parameter value="-target:jvm-1.8" />
-      </parameters>
     </profile>
   </component>
 </project>

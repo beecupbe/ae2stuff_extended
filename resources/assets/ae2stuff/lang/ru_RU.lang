@@ -16,6 +16,7 @@ ae2stuff.waila.wireless.connected=Подключен к %s,%s,%s
 ae2stuff.waila.wireless.notconnected=Не подключен
 ae2stuff.waila.wireless.channels=Каналов: %s
 ae2stuff.waila.wireless.power=Потребление: %s AE/t
+ae2stuff.waila.wireless.name=Имя: %s
 
 ae2stuff.gui.lock.on=Locked - Предметы не могут быть удалены автоматически
 ae2stuff.gui.lock.off=Unlocked - Предметы могут быть удалены автоматически

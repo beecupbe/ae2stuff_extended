@@ -46,5 +46,40 @@
       <option name="name" value="maven" />
       <option name="url" value="https://www.cursemaven.com" />
     </remote-repository>
+    <remote-repository>
+      <option name="id" value="Modrinth" />
+      <option name="name" value="Modrinth" />
+      <option name="url" value="https://api.modrinth.com/maven" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="MavenLocal" />
+      <option name="name" value="MavenLocal" />
+      <option name="url" value="file:/$MAVEN_REPOSITORY$/" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="BlameJared Maven" />
+      <option name="name" value="BlameJared Maven" />
+      <option name="url" value="https://maven.blamejared.com" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="mojang" />
+      <option name="name" value="mojang" />
+      <option name="url" value="https://libraries.minecraft.net" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="GTNH Maven" />
+      <option name="name" value="GTNH Maven" />
+      <option name="url" value="http://jenkins.usrv.eu:8081/nexus/content/groups/public" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="sponge" />
+      <option name="name" value="sponge" />
+      <option name="url" value="https://repo.spongepowered.org/maven/" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="Cleanroom Maven" />
+      <option name="name" value="Cleanroom Maven" />
+      <option name="url" value="https://maven.cleanroommc.com" />
+    </remote-repository>
   </component>
 </project>

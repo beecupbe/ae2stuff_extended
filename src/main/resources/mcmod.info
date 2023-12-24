@@ -1,0 +1,18 @@
+[{
+  "modid": "${modid}",
+  "name": "${modname}",
+  "description": "Stuff for AE2 UEL Extended, now maybe a little bit improved",
+  "version": "${version}",
+  "mcversion": "${mcversion}",
+  "url": "https://github.com/beecupbe/ae2stuff_extended",
+  "authorList": [
+    "serenibyss",
+    "bdew",
+    "B eecube31"
+  ],
+  "dependencies": [
+    "appliedenergistics2",
+    "bdlib"
+  ],
+  "logoFile": "assets/ae2stuff/textures/logo/logo.png"
+}]

@@ -1,0 +1,53 @@
+tile.ae2stuff.encoder.name=Кодировщик шаблонов
+tile.ae2stuff.grower.name=Камера выращивания кристаллов
+tile.ae2stuff.inscriber.name=Улучшенный высекатель
+tile.ae2stuff.inscriberimp.name=Продвинутый высекатель
+tile.ae2stuff.inscriberadv.name=Совершенный высекатель
+tile.ae2stuff.inscriberper.name=Моментальный высекатель
+tile.ae2stuff.wireless.name=Беспроводной соединитель
+
+item.ae2stuff.wireless_kit.name=Беспроводной комплект настройки
+item.ae2stuff.visualiser.name=Инструмент визуализации сети
+
+ae2stuff.error.not_connected=Нет соединения с сетью
+
+ae2stuff.waila.sleep.true=Не работает
+ae2stuff.waila.sleep.false=Работает
+ae2stuff.waila.power=%s / %s AE
+
+ae2stuff.waila.wireless.connected=Подключен к %s,%s,%s
+ae2stuff.top.wireless.connected=Подключен к
+ae2stuff.waila.wireless.notconnected=Не подключен
+ae2stuff.waila.wireless.channels=Каналы: %s
+ae2stuff.top.wireless.channels=Каналы:
+ae2stuff.waila.wireless.power=Энергопотребление: %s AE/t
+ae2stuff.top.wireless.power=Энергопотребление:
+ae2stuff.waila.wireless.name=Имя: %s
+ae2stuff.top.wireless.name=Имя:
+
+ae2stuff.gui.lock.on=Locked - Предметы не могут быть удалены автоматически
+ae2stuff.gui.lock.off=Unlocked - Предметы могут быть удалены автоматически
+ae2stuff.gui.lock.note=Если ни один из процессов не активен, и средний слот пуст
+
+ae2stuff.gui.recipes=Рецепты
+
+ae2stuff.wireless.tool.empty=Нажмите на беспроводной соединитель для связывания
+ae2stuff.wireless.tool.bound1=Связан с %s,%s,%s
+ae2stuff.wireless.tool.bound2=Нажмите на другой беспроводной соединитель для подключения
+ae2stuff.wireless.tool.connected=Подключен к %s,%s,%s
+ae2stuff.wireless.tool.failed=Не удалось подключиться
+ae2stuff.wireless.tool.dimension=Оба соединителя должны быть в одном измерении
+ae2stuff.wireless.tool.noexist=Связанного соединителя больше не существует
+ae2stuff.wireless.tool.security.network=Ошибка безопасности - сети не могут быть подключены
+ae2stuff.wireless.tool.security.player=Ошибка безопасности - вы не можете изменить эту сеть
+
+ae2stuff.visualiser.bound=Визуализация сети на %s,%s,%s
+ae2stuff.visualiser.mode=Режим:
+ae2stuff.visualiser.set=Режим изменён на "%s"
+ae2stuff.visualiser.mode.full=Показывать всё
+ae2stuff.visualiser.mode.nodes=Показывать узлы
+ae2stuff.visualiser.mode.channels=Показывать каналы
+ae2stuff.visualiser.mode.nonum=Показывать каналы и узлы
+ae2stuff.visualiser.mode.p2p=Показывать P2P-соединения
+
+itemGroup.bdew.ae2stuff=AE2 Stuff Unofficial: Extended
