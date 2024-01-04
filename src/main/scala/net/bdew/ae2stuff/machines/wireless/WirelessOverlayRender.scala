@@ -30,8 +30,10 @@ import net.bdew.ae2stuff.misc.WorldOverlayRenderer
 import net.bdew.lib.Client
 import net.bdew.lib.PimpVanilla._
 import net.minecraft.util.math.RayTraceResult
+import net.minecraftforge.fml.relauncher.{Side, SideOnly}
 import org.lwjgl.opengl.GL11
 
+@SideOnly(Side.CLIENT)
 object WirelessOverlayRender extends WorldOverlayRenderer {
   override def doRender(partialTicks: Float): Unit = {
     val mop = Client.minecraft.objectMouseOver

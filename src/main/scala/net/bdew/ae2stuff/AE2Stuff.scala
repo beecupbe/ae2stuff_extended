@@ -29,7 +29,7 @@ package net.bdew.ae2stuff
 import java.io.File
 import net.bdew.ae2stuff.compat.WrenchRegistry
 import net.bdew.ae2stuff.items.visualiser.{VisualiserOverlayRender, VisualiserPlayerTracker}
-import net.bdew.ae2stuff.machines.wireless.{WirelessModelFactory, WirelessModelLoader, WirelessOverlayRender}
+import net.bdew.ae2stuff.machines.wireless.{WirelessClientModelLoader, WirelessModelFactory, WirelessModelLoader, WirelessOverlayRender}
 import net.bdew.ae2stuff.misc.{Icons, MouseEventHandler, OverlayRenderHandler}
 import net.bdew.ae2stuff.network.NetHandler
 import net.bdew.ae2stuff.top.TOPHandler
@@ -82,9 +82,9 @@ object AE2Stuff {
     TuningLoader.loadConfigFiles()
     Machines.load()
     Items.load()
-    if (event.getSide == Side.CLIENT) {
+    if (event.getSide != Side.SERVER) {
       Icons.init()
-      ModelLoaderRegistry.registerLoader(new WirelessModelLoader(Map("models/block/builtin/wireless" -> new WirelessModelFactory())))
+      WirelessClientModelLoader.init();
     }
   }
 
